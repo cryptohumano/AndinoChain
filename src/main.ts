@@ -553,8 +553,8 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         <!-- Carolina Palma -->
         <div class="bg-gradient-to-b from-gray-800/30 to-gray-700/30 border border-gray-600/30 rounded-xl p-6 text-center hover:border-cyan-500/50 transition-all duration-300">
-          <div class="w-20 h-20 bg-gradient-to-r from-cyan-500 to-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
-            <span class="text-2xl font-bold text-white">CP</span>
+          <div class="w-20 h-20 rounded-full overflow-hidden mx-auto mb-4 border-2 border-cyan-500/30">
+            <img src="/logos/carolina.png" alt="Carolina Palma" class="w-full h-full object-cover" />
           </div>
           <h3 class="text-xl font-bold text-white mb-2">Carolina Palma</h3>
           <p class="text-cyan-400 font-semibold mb-3">Montañista Experta</p>
@@ -569,8 +569,8 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
         
         <!-- Francisco Albornoz -->
         <div class="bg-gradient-to-b from-gray-800/30 to-gray-700/30 border border-gray-600/30 rounded-xl p-6 text-center hover:border-blue-500/50 transition-all duration-300">
-          <div class="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
-            <span class="text-2xl font-bold text-white">FA</span>
+          <div class="w-20 h-20 rounded-full overflow-hidden mx-auto mb-4 border-2 border-blue-500/30">
+            <img src="/logos/francisco.jpg" alt="Francisco Albornoz" class="w-full h-full object-cover" />
           </div>
           <h3 class="text-xl font-bold text-white mb-2">Francisco Albornoz</h3>
           <p class="text-blue-400 font-semibold mb-3">Web3 Chile</p>
@@ -585,8 +585,8 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
         
         <!-- César Escobedo -->
         <div class="bg-gradient-to-b from-gray-800/30 to-gray-700/30 border border-gray-600/30 rounded-xl p-6 text-center hover:border-teal-500/50 transition-all duration-300">
-          <div class="w-20 h-20 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-4">
-            <span class="text-2xl font-bold text-white">CE</span>
+          <div class="w-20 h-20 rounded-full overflow-hidden mx-auto mb-4 border-2 border-teal-500/30">
+            <img src="/logos/cesar.png" alt="César Escobedo" class="w-full h-full object-cover" />
           </div>
           <h3 class="text-xl font-bold text-white mb-2">César Escobedo</h3>
           <p class="text-teal-400 font-semibold mb-3">Polkadot Agent</p>
@@ -601,18 +601,24 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
         
         <!-- Edgar Salinas -->
         <div class="bg-gradient-to-b from-gray-800/30 to-gray-700/30 border border-gray-600/30 rounded-xl p-6 text-center hover:border-green-500/50 transition-all duration-300">
-          <div class="w-20 h-20 bg-gradient-to-r from-green-500 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-4">
-            <span class="text-2xl font-bold text-white">ES</span>
+          <div class="w-20 h-20 rounded-full overflow-hidden mx-auto mb-4 border-2 border-green-500/30">
+            <img src="/logos/edgar-salinas.jpg" alt="Edgar Salinas" class="w-full h-full object-cover" />
           </div>
           <h3 class="text-xl font-bold text-white mb-2">Edgar Salinas</h3>
           <p class="text-green-400 font-semibold mb-3">Fundador Peranto</p>
           <p class="text-gray-300 text-sm mb-4">
             Desarrollador principal y arquitecto de soluciones blockchain, experto en identidad digital autosoberana.
           </p>
-          <div class="flex justify-center space-x-2">
+          <div class="flex justify-center space-x-2 mb-4">
             <span class="bg-green-500/20 text-green-400 px-2 py-1 rounded text-xs">💻 Desarrollo</span>
             <span class="bg-teal-500/20 text-teal-400 px-2 py-1 rounded text-xs">🏗️ Arquitectura</span>
           </div>
+          <a href="https://www.linkedin.com/in/edgardanielsalinasledesma/" target="_blank" class="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors duration-300">
+            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+            LinkedIn
+          </a>
         </div>
       </div>
       
