@@ -84,9 +84,48 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
         </div>
         
         <div class="relative">
-          <div class="relative w-full h-96">
-            <img src="/3.png" alt="Visión AndinoChain" class="w-full h-full object-cover rounded-lg shadow-xl" />
+          <!-- Carousel Container -->
+          <div class="relative w-full h-96 rounded-lg overflow-hidden shadow-xl">
+            <!-- Carousel Images -->
+            <div id="vision-carousel" class="relative w-full h-full">
+              <img src="/images/logos/carusel1.jpg" alt="Cordillera de los Andes" class="carousel-image active w-full h-full object-cover" />
+              <img src="/images/logos/carusel2.jpg" alt="Paisaje Andino" class="carousel-image w-full h-full object-cover" />
+              <img src="/images/logos/carusel3.jpg" alt="Montañas Chilenas" class="carousel-image w-full h-full object-cover" />
+              <img src="/images/logos/carusel4.jpg" alt="Cumbres Andinas" class="carousel-image w-full h-full object-cover" />
+              <img src="/images/logos/carusel5.jpg" alt="Paisaje Montañoso" class="carousel-image w-full h-full object-cover" />
+              <img src="/images/logos/carusel6.jpg" alt="Cordillera" class="carousel-image w-full h-full object-cover" />
+              <img src="/images/logos/carusel7.jpg" alt="Andes Chilenos" class="carousel-image w-full h-full object-cover" />
+              <img src="/images/logos/carusel8.jpg" alt="Montañas" class="carousel-image w-full h-full object-cover" />
+              <img src="/images/logos/carusel9.jpg" alt="Paisaje Andino" class="carousel-image w-full h-full object-cover" />
+            </div>
+            
+            <!-- Gradient Overlay -->
             <div class="absolute inset-0 bg-gradient-to-l from-black/30 to-transparent rounded-lg"></div>
+            
+            <!-- Navigation Arrows -->
+            <button id="carousel-prev" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all duration-300 hover:scale-110">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+              </svg>
+            </button>
+            <button id="carousel-next" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all duration-300 hover:scale-110">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </button>
+            
+            <!-- Dots Indicator -->
+            <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+              <button class="carousel-dot active w-3 h-3 rounded-full bg-white/80 hover:bg-white transition-all duration-300"></button>
+              <button class="carousel-dot w-3 h-3 rounded-full bg-white/40 hover:bg-white/60 transition-all duration-300"></button>
+              <button class="carousel-dot w-3 h-3 rounded-full bg-white/40 hover:bg-white/60 transition-all duration-300"></button>
+              <button class="carousel-dot w-3 h-3 rounded-full bg-white/40 hover:bg-white/60 transition-all duration-300"></button>
+              <button class="carousel-dot w-3 h-3 rounded-full bg-white/40 hover:bg-white/60 transition-all duration-300"></button>
+              <button class="carousel-dot w-3 h-3 rounded-full bg-white/40 hover:bg-white/60 transition-all duration-300"></button>
+              <button class="carousel-dot w-3 h-3 rounded-full bg-white/40 hover:bg-white/60 transition-all duration-300"></button>
+              <button class="carousel-dot w-3 h-3 rounded-full bg-white/40 hover:bg-white/60 transition-all duration-300"></button>
+              <button class="carousel-dot w-3 h-3 rounded-full bg-white/40 hover:bg-white/60 transition-all duration-300"></button>
+            </div>
           </div>
         </div>
       </div>
@@ -646,39 +685,106 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 
   <!-- Call to Action Section -->
   <section class="py-20 bg-gradient-to-b from-teal-900 to-blue-900">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">
-        Escalemos Juntos Hacia el Futuro
-      </h2>
-      
-      <p class="text-xl text-gray-300 mb-12 max-w-4xl mx-auto">
-        Estamos construyendo un ecosistema Web3 completo para el andinismo chileno, donde cada cumbre cuenta, cada esfuerzo se reconoce y cada logro permanece grabado para siempre en la historia digital de nuestras montañas.
-      </p>
-      <p class="text-xl text-gray-300 mb-8">
-        Somos Web3 Chile, y con AndinoChain, la historia de la montaña se escribe para siempre.
-      </p>
-      
-      <!-- Formulario de Registro de Interés -->
-      <div class="bg-gradient-to-r from-gray-800/50 to-gray-700/50 border border-gray-600/30 rounded-xl p-8 max-w-4xl mx-auto">
-        <h4 class="text-2xl font-bold text-white mb-4 text-center">🎯 ¿Listo para Escalar?</h4>
-        <p class="text-gray-300 text-lg mb-8 text-center">
-          Regístrate para recibir actualizaciones exclusivas y ser de los primeros en probar AndinoChain cuando esté listo
-        </p>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">
+          Escalemos Juntos Hacia el Futuro
+        </h2>
         
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <button onclick="openInterestForm()" class="bg-gradient-to-r from-cyan-500 to-green-500 text-white px-8 py-4 rounded-lg font-semibold hover:from-cyan-600 hover:to-green-600 transition-all duration-300 transform hover:scale-105 relative overflow-hidden group">
-            <span class="relative z-10">🚀 Registrar Mi Interés</span>
-            <div class="absolute inset-0 bg-gradient-to-r from-cyan-400 to-green-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          </button>
-          
-          <button onclick="openWaitlistForm()" class="border-2 border-cyan-400 text-cyan-400 px-8 py-4 rounded-lg font-semibold hover:bg-cyan-400 hover:text-white transition-all duration-300">
-            📋 Lista de Espera
-          </button>
+        <p class="text-xl text-gray-300 mb-8 max-w-4xl mx-auto">
+          Estamos construyendo un ecosistema Web3 completo para el andinismo chileno, donde cada cumbre cuenta, cada esfuerzo se reconoce y cada logro permanece grabado para siempre en la historia digital de nuestras montañas.
+        </p>
+        <p class="text-xl text-gray-300 mb-8">
+          Somos Web3 Chile, y con AndinoChain, la historia de la montaña se escribe para siempre.
+        </p>
+      </div>
+      
+      <!-- Main CTA Content -->
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <!-- Left: Call to Action Card -->
+        <div class="bg-gradient-to-br from-gray-800/60 to-gray-700/40 border border-gray-600/30 rounded-2xl p-8 lg:p-12 shadow-2xl backdrop-blur-sm">
+          <div class="text-center lg:text-left">
+            <h3 class="text-3xl lg:text-4xl font-bold text-white mb-6">
+              🎯 ¿Listo para Escalar?
+            </h3>
+            <p class="text-lg text-gray-300 mb-8 leading-relaxed">
+              Regístrate para recibir actualizaciones exclusivas y ser de los primeros en probar AndinoChain cuando esté listo
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 mb-8">
+              <button onclick="openInterestForm()" class="bg-gradient-to-r from-cyan-500 to-green-500 text-white px-8 py-4 rounded-lg font-semibold hover:from-cyan-600 hover:to-green-600 transition-all duration-300 transform hover:scale-105 relative overflow-hidden group flex-1">
+                <span class="relative z-10 flex items-center justify-center">
+                  <span class="mr-2">🚀</span>
+                  Registrar Mi Interés
+                </span>
+                <div class="absolute inset-0 bg-gradient-to-r from-cyan-400 to-green-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </button>
+              
+              <button onclick="openWaitlistForm()" class="border-2 border-cyan-400 text-cyan-400 px-8 py-4 rounded-lg font-semibold hover:bg-cyan-400 hover:text-white transition-all duration-300 flex-1">
+                <span class="flex items-center justify-center">
+                  <span class="mr-2">📋</span>
+                  Lista de Espera
+                </span>
+              </button>
+            </div>
+            
+            <div class="bg-green-800/20 border border-green-500/30 rounded-lg p-4">
+              <p class="text-green-300 text-sm text-center">
+                <span class="font-semibold">✨ Sin spam.</span> Solo actualizaciones importantes del proyecto y acceso prioritario al lanzamiento.
+              </p>
+            </div>
+          </div>
         </div>
         
-        <p class="text-gray-500 text-sm mt-6 text-center">
-          * Sin spam. Solo actualizaciones importantes del proyecto y acceso prioritario al lanzamiento.
-        </p>
+        <!-- Right: Achievement Images Carousel -->
+        <div class="relative">
+          <div class="relative w-full h-96 lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+            <!-- Achievement Carousel Images -->
+            <div id="achievement-carousel" class="relative w-full h-full">
+              <img src="/images/logos/cat1.jpg" alt="Cumbre Andina" class="achievement-image active w-full h-full object-cover" />
+              <img src="/images/logos/cat2.jpg" alt="Logro Montañero" class="achievement-image w-full h-full object-cover" />
+              <img src="/images/logos/cat3.jpg" alt="Expedición Andina" class="achievement-image w-full h-full object-cover" />
+              <img src="/images/logos/cat4.jpg" alt="Cumbre Chilena" class="achievement-image w-full h-full object-cover" />
+              <img src="/images/logos/cat5.jpg" alt="Aventura Montañera" class="achievement-image w-full h-full object-cover" />
+              <img src="/images/logos/cat6.jpg" alt="Logro Andino" class="achievement-image w-full h-full object-cover" />
+              <img src="/images/logos/cat7.jpg" alt="Cumbre Exitosa" class="achievement-image w-full h-full object-cover" />
+            </div>
+            
+            <!-- Gradient Overlay -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent rounded-2xl"></div>
+            
+            <!-- Navigation Arrows -->
+            <button id="achievement-prev" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all duration-300 hover:scale-110">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+              </svg>
+            </button>
+            <button id="achievement-next" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all duration-300 hover:scale-110">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </button>
+            
+            <!-- Dots Indicator -->
+            <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+              <button class="achievement-dot active w-3 h-3 rounded-full bg-white/80 hover:bg-white transition-all duration-300"></button>
+              <button class="achievement-dot w-3 h-3 rounded-full bg-white/40 hover:bg-white/60 transition-all duration-300"></button>
+              <button class="achievement-dot w-3 h-3 rounded-full bg-white/40 hover:bg-white/60 transition-all duration-300"></button>
+              <button class="achievement-dot w-3 h-3 rounded-full bg-white/40 hover:bg-white/60 transition-all duration-300"></button>
+              <button class="achievement-dot w-3 h-3 rounded-full bg-white/40 hover:bg-white/60 transition-all duration-300"></button>
+              <button class="achievement-dot w-3 h-3 rounded-full bg-white/40 hover:bg-white/60 transition-all duration-300"></button>
+              <button class="achievement-dot w-3 h-3 rounded-full bg-white/40 hover:bg-white/60 transition-all duration-300"></button>
+            </div>
+            
+            <!-- Achievement Text Overlay -->
+            <div class="absolute top-6 left-6 right-6">
+              <div class="bg-black/60 backdrop-blur-sm rounded-lg p-4">
+                <h4 class="text-white font-bold text-lg mb-2">🏔️ Cada Cumbre Cuenta</h4>
+                <p class="text-gray-200 text-sm">Registra tus logros y forma parte de la historia digital del andinismo chileno</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -796,6 +902,329 @@ document.addEventListener('DOMContentLoaded', () => {
 (window as any).openWaitlistForm = () => {
   window.open('https://forms.gle/MuPghG2kjQnjTkMv8', '_blank');
 };
+
+// Carousel Styles
+const carouselStyles = `
+  <style>
+    .carousel-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 0.8s ease-in-out;
+      transform: scale(1.05);
+    }
+    
+    .carousel-image.active {
+      opacity: 1;
+      transform: scale(1);
+    }
+    
+    .carousel-image.fade-out {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    
+    .carousel-dot {
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .carousel-dot.active {
+      background-color: rgba(255, 255, 255, 0.9) !important;
+      transform: scale(1.2);
+    }
+    
+    .carousel-dot:hover {
+      background-color: rgba(255, 255, 255, 0.7) !important;
+      transform: scale(1.1);
+    }
+    
+    #carousel-prev:hover,
+    #carousel-next:hover {
+      background-color: rgba(0, 0, 0, 0.8) !important;
+      transform: translateY(-50%) scale(1.1);
+    }
+    
+    /* Smooth transitions for carousel */
+    .carousel-transition {
+      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .carousel-dot {
+        width: 0.75rem;
+        height: 0.75rem;
+      }
+      
+      #carousel-prev,
+      #carousel-next {
+        padding: 0.5rem;
+      }
+      
+      #carousel-prev svg,
+      #carousel-next svg {
+        width: 1rem;
+        height: 1rem;
+      }
+    }
+    
+    /* Achievement Carousel Styles */
+    .achievement-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 0.8s ease-in-out;
+      transform: scale(1.05);
+    }
+    
+    .achievement-image.active {
+      opacity: 1;
+      transform: scale(1);
+    }
+    
+    .achievement-image.fade-out {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    
+    .achievement-dot {
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .achievement-dot.active {
+      background-color: rgba(255, 255, 255, 0.9) !important;
+      transform: scale(1.2);
+    }
+    
+    .achievement-dot:hover {
+      background-color: rgba(255, 255, 255, 0.7) !important;
+      transform: scale(1.1);
+    }
+    
+    #achievement-prev:hover,
+    #achievement-next:hover {
+      background-color: rgba(0, 0, 0, 0.8) !important;
+      transform: translateY(-50%) scale(1.1);
+    }
+    
+    /* Achievement carousel responsive */
+    @media (max-width: 768px) {
+      .achievement-dot {
+        width: 0.75rem;
+        height: 0.75rem;
+      }
+      
+      #achievement-prev,
+      #achievement-next {
+        padding: 0.5rem;
+      }
+      
+      #achievement-prev svg,
+      #achievement-next svg {
+        width: 1rem;
+        height: 1rem;
+      }
+    }
+  </style>
+`;
+
+// Inject carousel styles
+document.head.insertAdjacentHTML('beforeend', carouselStyles);
+
+// Vision Carousel Functionality
+(window as any).currentVisionSlide = 0;
+(window as any).visionCarouselInterval = null;
+
+(window as any).showVisionSlide = (index: number) => {
+  const images = document.querySelectorAll('#vision-carousel .carousel-image');
+  const dots = document.querySelectorAll('#vision-carousel .carousel-dot');
+  
+  // Hide all images
+  images.forEach(img => img.classList.remove('active'));
+  dots.forEach(dot => dot.classList.remove('active'));
+  
+  // Show current image and dot
+  if (images[index]) {
+    images[index].classList.add('active');
+  }
+  if (dots[index]) {
+    dots[index].classList.add('active');
+  }
+  
+  (window as any).currentVisionSlide = index;
+};
+
+(window as any).nextVisionSlide = () => {
+  const images = document.querySelectorAll('#vision-carousel .carousel-image');
+  const nextIndex = ((window as any).currentVisionSlide + 1) % images.length;
+  (window as any).showVisionSlide(nextIndex);
+};
+
+(window as any).prevVisionSlide = () => {
+  const images = document.querySelectorAll('#vision-carousel .carousel-image');
+  const prevIndex = ((window as any).currentVisionSlide - 1 + images.length) % images.length;
+  (window as any).showVisionSlide(prevIndex);
+};
+
+(window as any).startVisionCarousel = () => {
+  (window as any).visionCarouselInterval = setInterval(() => {
+    (window as any).nextVisionSlide();
+  }, 4000); // Change slide every 4 seconds
+};
+
+(window as any).stopVisionCarousel = () => {
+  if ((window as any).visionCarouselInterval) {
+    clearInterval((window as any).visionCarouselInterval);
+    (window as any).visionCarouselInterval = null;
+  }
+};
+
+// Achievement Carousel Functionality
+(window as any).currentAchievementSlide = 0;
+(window as any).achievementCarouselInterval = null;
+
+(window as any).showAchievementSlide = (index: number) => {
+  const images = document.querySelectorAll('#achievement-carousel .achievement-image');
+  const dots = document.querySelectorAll('#achievement-carousel .achievement-dot');
+  
+  // Hide all images
+  images.forEach(img => img.classList.remove('active'));
+  dots.forEach(dot => dot.classList.remove('active'));
+  
+  // Show current image and dot
+  if (images[index]) {
+    images[index].classList.add('active');
+  }
+  if (dots[index]) {
+    dots[index].classList.add('active');
+  }
+  
+  (window as any).currentAchievementSlide = index;
+};
+
+(window as any).nextAchievementSlide = () => {
+  const images = document.querySelectorAll('#achievement-carousel .achievement-image');
+  const nextIndex = ((window as any).currentAchievementSlide + 1) % images.length;
+  (window as any).showAchievementSlide(nextIndex);
+};
+
+(window as any).prevAchievementSlide = () => {
+  const images = document.querySelectorAll('#achievement-carousel .achievement-image');
+  const prevIndex = ((window as any).currentAchievementSlide - 1 + images.length) % images.length;
+  (window as any).showAchievementSlide(prevIndex);
+};
+
+(window as any).startAchievementCarousel = () => {
+  (window as any).achievementCarouselInterval = setInterval(() => {
+    (window as any).nextAchievementSlide();
+  }, 3500); // Change slide every 3.5 seconds (slightly faster than vision)
+};
+
+(window as any).stopAchievementCarousel = () => {
+  if ((window as any).achievementCarouselInterval) {
+    clearInterval((window as any).achievementCarouselInterval);
+    (window as any).achievementCarouselInterval = null;
+  }
+};
+
+// Initialize carousel when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+  // Initialize vision carousel
+  (window as any).showVisionSlide(0);
+  (window as any).startVisionCarousel();
+  
+  // Initialize achievement carousel
+  (window as any).showAchievementSlide(0);
+  (window as any).startAchievementCarousel();
+  
+  // Add event listeners for vision carousel controls
+  const prevBtn = document.getElementById('carousel-prev');
+  const nextBtn = document.getElementById('carousel-next');
+  const dots = document.querySelectorAll('#vision-carousel .carousel-dot');
+  
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      (window as any).stopVisionCarousel();
+      (window as any).prevVisionSlide();
+      setTimeout(() => (window as any).startVisionCarousel(), 2000);
+    });
+  }
+  
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      (window as any).stopVisionCarousel();
+      (window as any).nextVisionSlide();
+      setTimeout(() => (window as any).startVisionCarousel(), 2000);
+    });
+  }
+  
+  // Add click events to vision dots
+  dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+      (window as any).stopVisionCarousel();
+      (window as any).showVisionSlide(index);
+      setTimeout(() => (window as any).startVisionCarousel(), 2000);
+    });
+  });
+  
+  // Pause vision carousel on hover
+  const carouselContainer = document.getElementById('vision-carousel');
+  if (carouselContainer) {
+    carouselContainer.addEventListener('mouseenter', () => {
+      (window as any).stopVisionCarousel();
+    });
+    
+    carouselContainer.addEventListener('mouseleave', () => {
+      (window as any).startVisionCarousel();
+    });
+  }
+  
+  // Add event listeners for achievement carousel controls
+  const achievementPrevBtn = document.getElementById('achievement-prev');
+  const achievementNextBtn = document.getElementById('achievement-next');
+  const achievementDots = document.querySelectorAll('#achievement-carousel .achievement-dot');
+  
+  if (achievementPrevBtn) {
+    achievementPrevBtn.addEventListener('click', () => {
+      (window as any).stopAchievementCarousel();
+      (window as any).prevAchievementSlide();
+      setTimeout(() => (window as any).startAchievementCarousel(), 2000);
+    });
+  }
+  
+  if (achievementNextBtn) {
+    achievementNextBtn.addEventListener('click', () => {
+      (window as any).stopAchievementCarousel();
+      (window as any).nextAchievementSlide();
+      setTimeout(() => (window as any).startAchievementCarousel(), 2000);
+    });
+  }
+  
+  // Add click events to achievement dots
+  achievementDots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+      (window as any).stopAchievementCarousel();
+      (window as any).showAchievementSlide(index);
+      setTimeout(() => (window as any).startAchievementCarousel(), 2000);
+    });
+  });
+  
+  // Pause achievement carousel on hover
+  const achievementCarouselContainer = document.getElementById('achievement-carousel');
+  if (achievementCarouselContainer) {
+    achievementCarouselContainer.addEventListener('mouseenter', () => {
+      (window as any).stopAchievementCarousel();
+    });
+    
+    achievementCarouselContainer.addEventListener('mouseleave', () => {
+      (window as any).startAchievementCarousel();
+    });
+  }
+});
 
 // Global functions for screenshot carousel
 (window as any).currentScreenshot = 0;
