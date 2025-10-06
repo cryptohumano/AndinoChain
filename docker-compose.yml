@@ -1,0 +1,34 @@
+services:
+  andinochain-web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: andinochain-web
+    ports:
+      - "80:80"
+      - "443:443"
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+    volumes:
+      # Para logs persistentes
+      - ./logs:/var/log/nginx
+      # Para certificados SSL
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/www:/var/www/certbot
+    networks:
+      - andinochain-network
+
+  certbot:
+    image: certbot/certbot
+    container_name: andinochain-certbot
+    volumes:
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/www:/var/www/certbot
+    command: certonly --webroot --webroot-path=/var/www/certbot --email edoga.salinas@gmail.com --agree-tos --no-eff-email -d andinochain.xyz -d www.andinochain.xyz
+    networks:
+      - andinochain-network
+
+networks:
+  andinochain-network:
+    driver: bridge
